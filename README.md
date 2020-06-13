@@ -1,5 +1,5 @@
-# Expansion-PercentSign
+# Expansion-ASCII
 
-Simple expansion that returns a `%` upon use.
+Simple expansion that returns the [ASCII Value](http://www.asciitable.com/) of your input
 
-Ex: `%percentsign_%`
+Ex: `%ascii_37%` returns a `%`

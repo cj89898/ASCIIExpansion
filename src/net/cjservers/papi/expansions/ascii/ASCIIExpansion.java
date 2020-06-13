@@ -1,10 +1,10 @@
-package net.cjservers.papi.expansions.percentsign;
+package net.cjservers.papi.expansions.ascii;
 
 import org.bukkit.OfflinePlayer;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 
-public class PercentSign extends PlaceholderExpansion {
+public class ASCIIExpansion extends PlaceholderExpansion {
 	
 	/**
 	 * This method should always return true unless we have a dependency we need to make sure is on the server for our placeholders to work!
@@ -35,7 +35,7 @@ public class PercentSign extends PlaceholderExpansion {
 	 */
 	@Override
 	public String getIdentifier() {
-		return "percentsign";
+		return "ascii";
 	}
 	
 	/**
@@ -63,6 +63,10 @@ public class PercentSign extends PlaceholderExpansion {
 	 */
 	@Override
 	public String onRequest(OfflinePlayer player, String identifier) {
-		return "%";
+		if (identifier != null) {
+			char ascii = (char) Integer.parseInt(identifier);
+			return "" + ascii;
+		}
+		return null;
 	}
 }
